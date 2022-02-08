@@ -1,0 +1,67 @@
+.inputField {
+  width          : 30vw;
+  height         : 70vh;
+  display        : flex;
+  flex-direction : column;
+  justify-content: space-between;
+
+}
+
+.dateWrap {
+  margin-top     : 16px;
+  width          : 100%;
+  display        : flex;
+  justify-content: space-between;
+
+}
+
+.halfWidth {
+  width: 48%;
+}
+
+.fullWidth {
+  display        : flex;
+  justify-content: space-between;
+}
+
+.d-none {
+  display: none;
+}
+
+.ml-2 {
+  display: flex;
+
+  p {
+    margin-right: 32px;
+  }
+
+}
+
+.btns {
+  button {
+    margin-right: 16px;
+  }
+}
+
+.assign-section {
+  mat-checkbox {
+    margin-right: 16px;
+  }
+
+}
+
+.detailsView {
+  width          : 30vw;
+  height         : 70vh;
+  display        : flex;
+  flex-direction : column;
+  justify-content: space-between;
+}
+
+@media(max-width: 1000px) {
+
+  .inputField,
+  .detailsView {
+    width: 70vw;
+  }
+}

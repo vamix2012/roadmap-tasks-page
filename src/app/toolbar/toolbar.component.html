@@ -1,0 +1,57 @@
+<mat-drawer-container class="example-container" [hasBackdrop]="isMobile">
+  <mat-drawer #drawer [opened]="isOpened">
+    <mat-toolbar class="toolbar" [class.toolbarDark]="isDarkMode">
+
+      <select class="ticketsFilter" [class.ticketsFilterDark]="isDarkMode" matNativeControl required #clientValue
+        (change)="filterLabels($event)">
+        <option value="all">All</option>
+        <option value="frontend">Frontend</option>
+        <option value="backend">Backend</option>
+        <option value="security">Security</option>
+      </select>
+
+
+      <div class="weekSelector" [class.d-none]="isMobile">
+        <button class="weekSelectorBtn" (click)="setWeekDate('-')">
+          <mat-icon>keyboard_arrow_left</mat-icon>
+        </button>
+
+        <span>&nbsp; Calendar week: {{ calendarWeek }} &nbsp;</span>
+
+        <button class="weekSelectorBtn" (click)="setWeekDate('+')">
+          <mat-icon>keyboard_arrow_right</mat-icon>
+        </button>
+      </div>
+
+      <div class="colorThemeSelector">
+        <mat-slide-toggle (change)="onChange($event)" color="primary">
+          <span *ngIf="isDarkMode">Dark</span>
+          <span *ngIf="!isDarkMode">Light</span>
+        </mat-slide-toggle>
+      </div>
+
+      <button *ngIf="isMobile" [class.toolbarToggleBtnDark]="isDarkMode" class="toolbarToggleBtn" mat-raised-button
+        (click)="drawer.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+
+    </mat-toolbar>
+  </mat-drawer>
+  <mat-drawer-content>
+    <button [class.sideNavToggleBtnDark]="isDarkMode" *ngIf="isMobile" class="sideNavToggleBtn" mat-raised-button
+      (click)="drawer.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <app-calendar [drawerControl]="drawer" [class.darkCalendarBg]="isDarkMode" [calendarWeek]="calendarWeek"
+      [calendarWeekStart]="calendarWeekStart" [startIndex]="startIndex" [isFrontend]="isFrontend"
+      [isBackend]="isBackend" [isSecurity]="isSecurity" [isDarkMode]="isDarkMode">
+    </app-calendar>
+
+  </mat-drawer-content>
+</mat-drawer-container>
+
+
+
+
+<!-- App Calendar is binded here just for easy data syncronization between toolbar and calendar since they must work together
+I know there is a better way to sync data between components but for now I used this -->

@@ -1,0 +1,94 @@
+.toolbar {
+  display         : flex;
+  height          : max-content;
+  justify-content : space-between;
+  background-color: #3f51b5;
+  color           : white;
+  padding         : 16px;
+
+}
+
+.d-none {
+  display: none;
+}
+
+.sideNavToggleBtn {
+  background-color: var(--cyan);
+  color           : white;
+  position        : fixed;
+  z-index         : 3;
+  top             : 16px;
+  right           : 16px;
+}
+
+.sideNavToggleBtnDark {
+  background-color: var(--black);
+  border          : 1px solid white;
+}
+
+.toolbarToggleBtn {
+  background-color: var(--cyan);
+  margin          : 16px;
+  color           : white;
+}
+
+.toolbarToggleBtnDark {
+  background-color: var(--gray);
+}
+
+mat-drawer {
+  height: fit-content;
+  width : 100vw;
+}
+
+mat-drawer-content {
+  background-color: white;
+  height          : 100vh;
+  width           : 100vw;
+  overflow        : hidden;
+}
+
+
+.weekSelectorBtn {
+  background   : transparent;
+  border       : 2px solid white;
+  border-radius: 100%;
+  color        : white;
+  padding      : 5px;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.356);
+    cursor          : pointer;
+  }
+}
+
+
+.ticketsFilter {
+
+  background-color: #3f51b5;
+  color           : white;
+  width           : 200px;
+  border          : 2px solid white;
+  padding         : 8px;
+  border-radius   : 5px;
+  font-size       : large;
+  cursor          : pointer;
+  margin          : 0 32px 0 32px;
+}
+
+.toolbarDark,
+.ticketsFilterDark {
+  background-color: var(--black-lighter);
+}
+
+@media(max-width: 800px) {
+  .toolbar {
+    flex-wrap      : wrap;
+    justify-content: space-around;
+
+  }
+
+  .weekSelectorBtn {
+    margin: 16px;
+  }
+}

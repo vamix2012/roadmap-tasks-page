@@ -1,0 +1,410 @@
+// This Class is shown only when all Labels are selected otherwise just .tableSmall is active
+
+
+
+
+.table {
+  height: calc(90% - 64px) !important;
+
+}
+
+.mobile {
+  visibility: hidden;
+}
+
+.empty {
+  display: none !important;
+}
+
+.tableWrap {
+  width     : 100%;
+  height    : 100%;
+  margin-top: 64px;
+  padding   : 32px;
+  overflow  : scroll;
+}
+
+.tableWrapDark {
+  background-color: var(--black);
+
+
+
+  th:first-child {
+    border-right: 1px solid white !important;
+  }
+}
+
+
+.tableSmall {
+  width : calc(100% - 64px);
+  height: calc(50% - 64px);
+
+
+
+  border-collapse: collapse;
+  z-index        : 0;
+
+  td {
+    width: 16.66%
+  }
+
+  .firstRow {
+    height          : 50px;
+    background-color: #3f51b5;
+    color           : white;
+
+    th:first-child {
+      background: white;
+    }
+  }
+
+  .darkPrimary {
+    background-color: var(--black-lighter);
+
+    th:not(:first-child) {
+      border: 1px solid white;
+    }
+
+    th:first-child {
+      background-color: var(--black);
+    }
+  }
+
+  .darkBg {
+    background-color: var(--black);
+
+    td:first-child,
+    th:first-child {
+      border-right: 1px solid white;
+    }
+
+    td:not(:first-child),
+    th:not(:first-child) {
+      border: 1px solid white;
+    }
+
+    td:first-child {
+      color: white;
+    }
+  }
+
+  .darkCard {
+    border          : 1px solid white;
+    color           : white;
+    background-color: #607d8b;
+
+    .notesId {
+      border: 1px solid white;
+    }
+
+    &:hover {
+      background-color: #87a2af;
+    }
+
+  }
+
+
+  td:first-child,
+  th:first-child {
+    text-align     : center;
+    font-size      : 34px;
+    // width       : 10%;
+    border         : hidden;
+    border-right   : 1px solid black;
+  }
+
+  td:not(:first-child),
+  th:not(:first-child) {
+    border  : 1px solid black;
+    position: relative;
+  }
+}
+
+// Class for TaskCard design
+.taskCard {
+
+  height  : 80%;
+  position: relative;
+  border  : 1px solid black;
+  z-index : 1;
+
+  mat-card-title {
+    position : absolute;
+    top      : 5px;
+    left     : 5px;
+    font-size: 1.2rem;
+  }
+
+  mat-card-content {
+    position     : absolute;
+    top          : 50px;
+    left         : 5px;
+    height       : 35px;
+    white-space  : normal;
+    overflow     : hidden;
+    margin-bottom: -5px;
+  }
+
+  .dots {
+    display: none;
+  }
+
+
+
+  mat-card-footer {
+    .footerLeft {
+      position      : absolute;
+      bottom        : 3px;
+      left          : 5px;
+      display       : flex;
+      flex-direction: column;
+    }
+
+    .footerRight {
+      position: absolute;
+      bottom  : 3px;
+      right   : 5px;
+
+    }
+  }
+
+  &:hover {
+    background-color: rgb(241, 240, 240);
+    z-index         : 5;
+    cursor          : pointer;
+    transform       : scale(1.01) scaleX(1.01);
+    transition      : transform 125ms ease-in-out;
+  }
+}
+
+// Used to wrap every TaskCard for a better alignment of the items
+.taskCardWrap {
+  position: absolute;
+  top     : 2px;
+  left    : 2px;
+  margin  : 2px;
+
+  .notesId {
+    border       : 1px solid black;
+    padding      : 8px;
+    margin-right : 8px;
+    border-radius: 50%;
+    font-size    : 10px;
+  }
+}
+
+
+
+// Tooltip is not visible on screens largen then 1682px
+::ng-deep .card-tooltip {
+  visibility: hidden;
+}
+
+
+// to be applied on screen smaller than 1680px
+@media(max-width: 1680px) {
+
+
+  .rem-border {
+    border: none !important;
+  }
+
+
+  .taskCard {
+
+    mat-card-footer {
+      .footerLeft {
+
+        display: none;
+      }
+
+      .footerRight {
+        font-size: 12px;
+      }
+
+    }
+
+    .notesId {
+      border : none;
+      padding: 0;
+    }
+  }
+
+  .dots {
+    display : inline !important;
+    position: absolute;
+    top     : 75px;
+    left    : 5px;
+  }
+
+  .taskCardWrap {
+    margin: 5px
+  }
+
+  // Tooltip design to display on minimal design notes
+  ::ng-deep .card-tooltip {
+    font-size       : 24px;
+    visibility      : visible;
+    background-color: deeppink;
+  }
+}
+
+
+@media(max-height: 800px) {
+
+  // Mobile.......
+
+  .subHeaderDark {
+    background-color: var(--grey) !important;
+    border-top      : 1px solid white;
+    border-bottom   : 1px solid white;
+  }
+
+  .mobileDarkBg {
+
+    background-color: #303030;
+
+    div,
+    span {
+      color: white;
+    }
+  }
+
+
+
+  .mobile {
+    visibility: visible;
+    width     : 100vw;
+    height    : 100vh;
+    overflow-y: scroll;
+
+
+    .matCardFooter {
+      display        : flex;
+      flex-direction : row;
+      justify-content: space-between;
+      width          : 100%;
+      margin-top     : 16px;
+      margin-bottom  : 16px;
+    }
+
+    .subHeader {
+      background-color: #3f51b5;
+      color           : white;
+      border-top      : 1px solid black;
+      border-bottom   : 1px solid black;
+      margin-bottom   : 16px;
+      display         : flex;
+    }
+
+  }
+
+
+  .tableWrap {
+    display: none;
+  }
+
+  .table {
+    min-height   : 660px;
+    margin-bottom: 100px;
+  }
+
+  ::ng-deep .card-tooltip {
+    visibility: hidden;
+  }
+
+  .tableSmall {
+    height       : 230px;
+    margin-bottom: 100px;
+  }
+
+
+
+
+}
+
+@media(max-width: 1000px) {
+
+  // Mobile.......
+
+  .subHeaderDark {
+    background-color: var(--gray) !important;
+    border-top      : 1px solid white;
+    border-bottom   : 1px solid white;
+  }
+
+  .mobileDarkBg {
+
+    background-color: var(--black-lighter);
+
+    div,
+    span {
+      color: white;
+    }
+  }
+
+
+
+  .mobile {
+    visibility   : visible;
+    width        : 100vw;
+    height       : 100vh;
+    margin-bottom: 64px;
+    overflow-y   : scroll;
+
+
+    .matCardFooter {
+      display        : flex;
+      flex-direction : row;
+      justify-content: space-between;
+      width          : 100%;
+      margin-top     : 16px;
+      margin-bottom  : 16px;
+    }
+
+    .subHeader {
+      background-color: #3f51b5;
+      color           : white;
+      border-top      : 1px solid black;
+      border-bottom   : 1px solid black;
+      margin-bottom   : 16px;
+    }
+
+  }
+
+  // Mobile --.......---
+
+
+
+  ::ng-deep .card-tooltip {
+    visibility: hidden;
+  }
+
+  .table,
+  .tableSmall {
+    width        : calc(1000px - 64px);
+    margin-right : 32px;
+    margin-bottom: 150px;
+  }
+
+  .tableWrap {
+    display: none;
+  }
+
+
+
+  .mobileDarkBg {
+
+    background-color: var(--black-lighter);
+
+    div,
+    span {
+      color: white;
+    }
+  }
+
+  .empty {
+    display: none !important;
+  }
+
+}
