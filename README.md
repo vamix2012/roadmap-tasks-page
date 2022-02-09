@@ -13,7 +13,7 @@ This project is developed using Angular, Angular Material, Compodoc for document
 
 **Toolbar**
 
-The application has a toolbar with Label filtering option, Calendar Week selector and Theme switch eg. Light or Dark mode.
+The application has a toolbar with Label filtering option, Calendar Week selector and Theme switch eg. Light or Dark mode. for mobile view a toolbar toggler button will apear and can be closed or opened
 
 **Grid with notes**
 
@@ -31,7 +31,7 @@ The data is fetched with a GET Request on Notes Endpoint, then the response is s
 
 **Responsive design**
 
-The size of the Table and Notes is updated based on the screen width and height and under 800px width or 1000px the Table has fixed Width and Height and can be scrolled to see the oveflowing content.
+The size of the Table and Notes is updated based on the screen width and height and under 800px width or 1000px the data is shown a a list to have a better experinece on mobile
 
 **Theme switch**
 
