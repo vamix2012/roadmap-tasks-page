@@ -4,9 +4,8 @@ This application shows notes organized by categories on a timeline.
 
 ## Useful Links
 
-[Live demo](https://lucian-cristian-toma.developerakademie.com)
+[Live demo](https://lucian-cristian-toma.developerakademie.com/roadmap-v3)
 
-[Documentation (Compodoc)](https://lucian-cristian-toma.developerakademie.com/roadmap-documentation)
 
 ## Project description
 
